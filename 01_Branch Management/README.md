@@ -51,3 +51,18 @@ then push to our remote repository.
 
 > please use with extreme caution because it will anger your whole team, disruptive for other using the remote branch, commits will disappear and subsequent commits are orphaned. 
 
+# Identify Merged Branches.
+* List branches that have been merged into a branch.
+* Useful for knowing what features have been incorporated. 
+* Useful for cleanup after merging many features.
+
+```
+# check branch have been merge to current branch
+git branch --merged
+
+# check branch not yet been merge to current branch
+git branch --no-merged
+
+# r for remote branch
+git branch -r --merged
+```
