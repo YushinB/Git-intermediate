@@ -65,4 +65,59 @@ git branch --no-merged
 
 # r for remote branch
 git branch -r --merged
+
+# specify other branch names or commits.
+git branch --merged HEAD
+
+git branch --merged july_release
+
+git branch --merged origin/july_release
+
+git branch --merged b325a7c49
+```
+# Delete local branch and remote branches.
+
+```
+# Delete branch
+# (Must be on a different branch)
+git branch -d new_feature
+
+# Delete not yet merged branch
+git branch -D new_feature
+
+# Delete remote branch
+# git push origin <local>:<remote>
+git push origin:new_feature
+
+# Delete remote branch, v1.7.0+
+git push --delete origin new_feature
+
+# Delete remote branch, v2.8.0+
+git push -d origin new_feature.
+```
+
+# Prune stale branches
+
+* Delete all stale remote-tracking branches.
+* Remote-tracking branches, not remote branches.
+* Stale branch: a remote-tracking branch that no longer tracks anything because the actual branch is the remote repository has been deleted.
+
+## Remote Branches.
+1. Branch on the remote repository (bugfix)
+2. Local snapshot of the remote branch (origin/bugfix)
+3. Local branch, tracking the remote branch (bugfix)
+
+```
+# delete stale remote-tracking branches
+git remote prune origin
+
+# we can see what it will do before it do it. 
+git remote prune origin --dry-run
+
+# Shortcut: prune, then fetch
+git fetch --prune
+git fetch -p
+
+# Always prune before fetch
+git congig --global fetch.prune true
 ```
