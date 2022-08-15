@@ -8,6 +8,8 @@
 git push -f
 git push --force
 ```
+after using ``` git push -f```, other user need to use command ``` git reset --hard orign/[branch name]``` to reflect change from remote branch. 
+
 ## when we user the force push remote. 
 please see the below case. <br>
 
